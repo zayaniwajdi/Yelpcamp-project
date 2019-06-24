@@ -1,0 +1,41 @@
+<% include ../partiels/header %>
+<% include ../partiels/navbar %>
+
+<!-- Main container -->
+<div class="container mt-3">
+	
+	<!-- Jumbotron -->
+	<div style="color: white" class="jumbotron jumbo-bg">
+		<h1>Welcome To YelpCamp !!!</h1>
+		<p>View our hand-picked capmgrounds from all over the world !!!</p>
+		<div><a href="/campgrounds/new" class="btn btn-jumbotrun">Add new campground</a></div>
+	</div>
+	
+	
+	<div class="row" >
+		<%campgrounds.forEach(function(camp){%>
+		<!-- 	sm screen: it takes 12 parts each (so all the screen)
+				md screnn: it takes 6 from 12 parts each (so 2 card in the screen) 
+				lg or plus screen: it takes 4 from 12 parts each (so 12/4=3 cards in the screen) -->
+		
+		<div class="col-sm-12 col-md-6 col-lg-4 pb-5">
+			<div class="card h-100">
+				<img src="<%=camp.url%>" class="card-img-top" style="height: 300px; object-fit: cover;">
+				<div class="card-body bg-light" style="max-height: 220px;" style="">
+					<h5 class="card-title h-25" ><%=camp.name%></h5>
+					<p class="card-text text-justify" ><%=camp.description.substring(0, 50)%> ...</p>
+					<a href="/campgrounds/<%=camp._id%>" class="btn btn-primary btn-block">More infos</a>
+				</div>
+			</div>
+		</div>
+		<%});%>
+	</div>
+
+	
+	
+
+	
+	
+</div>  <!-- container ends here -->
+
+ <% include ../partiels/footer %> 

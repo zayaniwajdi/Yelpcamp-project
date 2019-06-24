@@ -1,0 +1,40 @@
+<% include ../partiels/header %>
+<% include ../partiels/navbar %>
+
+
+<div class="container mt-5">
+	<div class="row justify-content-center">
+		<div class="col-md-6">
+			<div class="card">
+				<header class="card-header jumbo-bg">
+					<h4 class="card-title mt-2 text-white">Reset password</h4>
+				</header>
+				<article class="card-body">
+					<form  action="/reset/<%= token%>" method="POST">
+						
+						<!--  New password	-->
+						<div class="form-group">
+							<label>New password</label>
+							<input type="password" class="form-control" name="newpwd">
+						</div> <!-- form-group end.// -->
+						
+						<!--  Confirm password	-->
+						<div class="form-group">
+							<label>Confirm password</label>
+							<input type="password" class="form-control" name="confirmpwd">
+						</div> <!-- form-group end.// -->
+						
+						<!--  Submit button-->
+						<div class="form-group">
+							<button type="submit" class="btn btn-primary btn-block">Update Password </button>
+						</div> <!-- form-group// -->
+												
+					</form>
+				</article> <!-- card-body end .// -->
+			</div> <!-- card.// -->
+		</div> <!-- col.//-->
+	</div> <!-- row.//-->
+</div> 
+<!--container end.//-->
+
+ <% include ../partiels/footer %>

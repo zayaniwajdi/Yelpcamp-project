@@ -1,0 +1,48 @@
+<% include ../partiels/header %>
+<% include ../partiels/navbar %>
+
+
+
+<div class="container">
+	<div class="m-5 pb-3 pt-3 bg-light">
+	<h1 style="text-align:center; margin:20px 0">Create a New Campground</h1>
+	<div class="row">
+		<div style="width: 40%; margin:15px auto;">
+			<form action="/campgrounds" method="POST" >
+			<!-- <div class=""> -->
+				<div class="form-group">
+					<input type="text" class="form-control" name="camp[name]"  placeholder="Campground name">
+				</div>
+
+				<div class="form-group">
+					<input type="number" class="form-control" name="camp[price]"  placeholder="Campground price">
+				</div>
+
+				<div class="form-group">
+					<input type="text" class="form-control" name="camp[url]"  placeholder="Campground url">
+				</div>
+				
+				<div class="form-group">
+					<label for="label_Address">Address</label>
+					<input type="text" class="form-control" name="camp[address]" id="label_Address" placeholder="Campground address">
+				</div>
+
+				<div class="form-group">
+					<textarea class="form-control" name="camp[description]"  placeholder="Campground Description"></textarea>
+				</div>
+
+				<button type="submit" value="Submit" class="btn btn-primary btn-block">Submit</button>
+				
+			</form><!-- Form ends here -->
+		</div>
+		
+	</div><!-- Row ends here -->
+	
+	<p style="text-align:center; margin-top:20px"><a href="/campgrounds">Go Back</a></p>
+	</div>
+
+</div><!-- Container ends here -->
+
+
+
+<% include ../partiels/footer %> 
